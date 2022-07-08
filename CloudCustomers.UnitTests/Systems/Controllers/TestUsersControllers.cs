@@ -18,4 +18,16 @@ public class UnitTest1
         // Assert
         result.StatusCode.Should().Be(200);
     }
+    [Fact]
+    public async Task Get_OnSuccess_InvokesUserService()
+    {
+        // Arrange
+        var sut = new UsersController();
+
+        // Act
+        var result = (OkObjectResult)await sut.Get();
+
+        // Assert
+        result.StatusCode.Should().Be(200);
+    }
 }
