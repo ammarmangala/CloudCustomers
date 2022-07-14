@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CloudCustomers.UnitTests.Systems.Controllers;
 
-public class UnitTest1
+public class TestUsersController
 {
     [Fact]
     public async Task Get_OnSuccess_ReturnsStatusCode200()
