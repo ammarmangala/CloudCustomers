@@ -1,6 +1,14 @@
 ﻿namespace CloudCustomers.API.Services
 {
-    public class UsersService
+    public interface IUsersService
     {
+
+    }
+    public class UsersService : IUsersService
+    {
+        public UsersService()
+        {
+
+        }
     }
 }

@@ -1,6 +1,7 @@
 using CloudCustomers.API.Controllers;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
+using Moq;
 
 namespace CloudCustomers.UnitTests.Systems.Controllers;
 
@@ -22,7 +23,8 @@ public class TestUsersController
     public async Task Get_OnSuccess_InvokesUserService()
     {
         // Arrange
-        var sut = new UsersController();
+        var mockUserService = Mock<IUsersService>();
+        var sut = new UsersController(mockUserService.Object);
 
         // Act
         var result = (OkObjectResult)await sut.Get();
